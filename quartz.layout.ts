@@ -8,8 +8,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      LinkedIn: "https://www.linkedin.com/in/garthschwer/",
+      GitHub: "https://github.com/garthschwer",
     },
   }),
 }
@@ -39,6 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.DesktopOnly(Component.RecentNotes({ title: "Recent Writing", limit: 5 })),
   ],
   right: [
     Component.Graph(),

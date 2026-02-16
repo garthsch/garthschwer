@@ -1,0 +1,209 @@
+/* ============================================
+   GARTH SCHWER DIGITAL GARDEN - CUSTOM CSS
+   Professional Executive Aesthetic
+   Works in both Light and Dark modes
+   ============================================ */
+
+/* === LIGHT MODE COLORS === */
+.theme-light {
+  --primary-blue: #1e3a8a;
+  --accent-cyan: #0891b2;
+  --heading-gradient-start: #0891b2;
+  --heading-gradient-end: #1e3a8a;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-subtle: #cbd5e1;
+  --code-bg: #f1f5f9;
+  --blockquote-bg: #f8fafc;
+}
+
+/* === DARK MODE COLORS === */
+.theme-dark {
+  --primary-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --heading-gradient-start: #06b6d4;
+  --heading-gradient-end: #3b82f6;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-subtle: #334155;
+  --code-bg: #1e293b;
+  --blockquote-bg: #1e293b;
+}
+
+/* === TYPOGRAPHY === */
+.markdown-preview-view h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--heading-gradient-start), var(--heading-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.markdown-preview-view h2 {
+  font-size: 1.875rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.markdown-preview-view h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.markdown-preview-view h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* === LINKS === */
+.markdown-preview-view a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.markdown-preview-view a:hover {
+  color: var(--primary-blue);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.internal-link {
+  color: var(--accent-cyan) !important;
+  font-weight: 500;
+}
+
+.internal-link:hover {
+  background: rgba(8, 145, 178, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* === CODE BLOCKS === */
+.markdown-preview-view code {
+  background: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-subtle);
+}
+
+.markdown-preview-view pre code {
+  display: block;
+  padding: 1.5rem;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+/* === BLOCKQUOTES === */
+.markdown-preview-view blockquote {
+  background: var(--blockquote-bg);
+  border-left: 4px solid var(--accent-cyan);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* === TAGS === */
+.tag {
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(8, 145, 178, 0.3);
+}
+
+/* === LISTS === */
+.markdown-preview-view li::marker {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+/* === TABLES === */
+.markdown-preview-view table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-preview-view th {
+  background: var(--primary-blue);
+  color: white;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.markdown-preview-view td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.markdown-preview-view tr:hover {
+  background: rgba(8, 145, 178, 0.05);
+}
+
+/* === HORIZONTAL RULE === */
+.markdown-preview-view hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  margin: 2rem 0;
+}
+
+/* === NUMBERED LISTS STYLING === */
+.markdown-preview-view ol {
+  counter-reset: item;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.markdown-preview-view ol>li {
+  counter-increment: item;
+  position: relative;
+}
+
+.markdown-preview-view ol>li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: -2rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* === SMOOTH SCROLLING === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === SELECTION === */
+::selection {
+  background: var(--accent-cyan);
+  color: white;
+}
+
+/* === FOCUS STATES === */
+a:focus,
+button:focus {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
