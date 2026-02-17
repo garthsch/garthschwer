@@ -8,7 +8,10 @@
 - [x] Customize layout (Graph view, Explorer, Search)
 - [ ] Set up GitHub Repository and Actions
 - [ ] Test local build (`bun quartz build`)
-- [ ] Point DNS to GitHub Pages
+- [x] Point DNS to GitHub Pages
+- [ ] Verify SSL/HTTPS on garthschwer.com
+- [ ] Review first 5 notes for rendering accuracy (Mermaid, Callouts)
+- [ ] Set up "Digital Garden" branding assets (Favicon, Social Image)
 
 ---
 
