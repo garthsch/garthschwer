@@ -48,7 +48,4 @@ If your software solves a problem that can be scripted in a single prompt, you d
 
 ## Related
 
-- [[Enshitification]]
-- [[Philosophy of Freedom in SOC Leadership]]
 - [[AI and Cyber Governance Consulting Models]]
-- [[Memetic Fortress]]
