@@ -7,7 +7,7 @@ tags:
   - hubert_joly
   - crisis_management
 status: 🌱 seedling
-date: "{{date}}"
+date: 2026-02-16
 aliases:
 updated:
 ---

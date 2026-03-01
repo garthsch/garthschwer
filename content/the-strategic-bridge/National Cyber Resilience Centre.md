@@ -5,9 +5,8 @@ tags:
   - Public_Policy
   - CSIRT
 status: 🪴 sapling
-date: "{{date}}"
+date: 2026-02-16
 aliases:
----
 ---
 
 # The National Cyber Security Center (NCSC) Model
