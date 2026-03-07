@@ -10,8 +10,8 @@
 - [x] Test local build (`bun quartz build`) — 76 files, successful
 - [x] Point DNS to GitHub Pages
 - [x] Verify SSL/HTTPS on garthschwer.com — confirmed 200 OK, TLS 1.3 (2026-03-01)
-- [ ] Review first 5 notes for rendering accuracy (Mermaid, Callouts)
-- [ ] Set up "Digital Garden" branding assets (Favicon, Social Image)
+- [x] Review first 5 notes for rendering accuracy — all 5 pages 200 OK, serif fonts correct, wiki-links styled (2026-03-02)
+- [x] Set up "Digital Garden" branding assets — custom crystal gem favicon + auto-generated OG images per page (2026-03-02)
 - [x] Set up PC-side obsidian-git plugin (3rd device sync — vault backup commits confirmed 2026-03-02)
 
 ---
