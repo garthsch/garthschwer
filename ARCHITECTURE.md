@@ -1,8 +1,23 @@
 # Quartz v5 Architecture & Context
 
-This document outlines the architecture, layout structure, styling, and key components of this Quartz v5 digital garden wiki. It serves as an context-builder for LLM agents at session start.
+This document outlines the architecture, layout structure, styling, and key components of this Quartz v5 digital garden wiki. It serves as a context-builder for LLM agents at session start.
 
 ---
+
+## 0. Git Branch & Deployment Strategy
+
+- **Development Branch**: `v5` (all active development and component upgrades occur here).
+- **Deployment Branch**: `v4` (the live website `garthschwer.com` is hosted by a provider tracking the `v4` default branch).
+- **Deploying Upgrades**: To push development changes to the live site, the `v4` branch is reset to match `v5` exactly and force-pushed:
+  ```powershell
+  git checkout v4
+  git reset --hard v5
+  git push origin v4 --force
+  git checkout v5
+  ```
+
+---
+
 
 ## 1. System Overview
 
