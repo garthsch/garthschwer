@@ -7,7 +7,9 @@ This document outlines the architecture, layout structure, styling, and key comp
 ## 0. Git Branch & Deployment Strategy
 
 - **Development Branch**: `v5` (all active development and component upgrades occur here).
-- **Deployment Branch**: `v4` (the live website `garthschwer.com` is hosted by a provider tracking the `v4` default branch).
+- **Deployment Branch**: `v4` (the live website `garthschwer.com` is compiled and deployed from pushes to this branch).
+- **Deployment Source Setting**: The repository's GitHub Pages settings *must* be configured to **"GitHub Actions"** (bypassing the default Jekyll branch builder, which fails on Quartz modules).
+- **CI Build Directives**: The workflow redirects build output (`npx quartz build -v > build.log 2>&1`) to avoid TTY issues on headless CI runners and logs details on step failure.
 - **Deploying Upgrades**: To push development changes to the live site, the `v4` branch is reset to match `v5` exactly and force-pushed:
   ```powershell
   git checkout v4
