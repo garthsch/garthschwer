@@ -1,7 +1,9 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import SidebarToggleConstructor from "../SidebarToggle"
 
 const Header = HeaderConstructor()
+const SidebarToggle = SidebarToggleConstructor()
 
 /**
  * The default page frame — three-column layout with left sidebar, center
@@ -23,7 +25,9 @@ export const DefaultFrame: PageFrame = {
   }: PageFrameProps) {
     return (
       <>
+        <SidebarToggle {...componentData} />
         <div class="left sidebar">
+
           {left.map((BodyComponent) => (
             <BodyComponent {...componentData} />
           ))}

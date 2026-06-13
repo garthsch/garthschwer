@@ -31,6 +31,7 @@ class ComponentRegistry {
     if (existing && existing.source !== source) {
       console.warn(`Component "${name}" is being overwritten by ${source}`)
     }
+    console.log(`[ComponentRegistry] Registering "${name}" from "${source}"`);
     this.components.set(name, { component, source, manifest })
   }
 
@@ -81,10 +82,11 @@ class ComponentRegistry {
   }
 
   getAllComponents(): QuartzComponent[] {
+    console.log(`[ComponentRegistry] getAllComponents called. Current registered count: ${this.components.size}`);
     // Deduplicate by component reference (same constructor may be registered under multiple keys)
     const seen = new Set<QuartzComponent | QuartzComponentConstructor>()
     const results: QuartzComponent[] = []
-    for (const r of this.components.values()) {
+    for (const [name, r] of this.components.entries()) {
       if (seen.has(r.component)) continue
       seen.add(r.component)
       try {
@@ -100,10 +102,11 @@ class ComponentRegistry {
           instance = r.component as QuartzComponent
         }
         if (instance) {
+          console.log(`[ComponentRegistry] getAllComponents returning instance for "${name}" (afterDOM exists: ${!!instance.afterDOMLoaded})`);
           results.push(instance)
         }
-      } catch {
-        // Skip components that fail to instantiate
+      } catch (e) {
+        console.error(`[ComponentRegistry] Failed to instantiate "${name}":`, e);
       }
     }
     return results
@@ -121,7 +124,11 @@ class ComponentRegistry {
   }
 }
 
-export const componentRegistry = new ComponentRegistry()
+const g = globalThis as any
+if (!g.__quartzComponentRegistry) {
+  g.__quartzComponentRegistry = new ComponentRegistry()
+}
+export const componentRegistry = g.__quartzComponentRegistry
 
 export function defineComponent<Options extends object | undefined = undefined>(
   factory: QuartzComponentConstructor<Options>,

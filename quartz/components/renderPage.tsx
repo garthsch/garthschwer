@@ -72,7 +72,7 @@ export function pageResources(
   })
 
   const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
-  const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
+  const contentIndexScript = `window.fetchData = fetch("${contentIndexPath}").then(data => data.json())`
 
   const resources: StaticResources = {
     css: [
@@ -347,8 +347,14 @@ export function renderPage(
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug} data-basepath={basePath}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if (localStorage.getItem("sidebar-collapsed") === "true") { document.body.classList.add("sidebar-collapsed"); }`,
+          }}
+        />
         {frame.css && <style dangerouslySetInnerHTML={{ __html: frame.css }} />}
         <div id="quartz-root" class="page" data-frame={frame.name}>
+
           <Body {...componentData}>
             {[
               frame.render({

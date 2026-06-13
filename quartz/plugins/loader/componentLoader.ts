@@ -30,6 +30,7 @@ export async function loadComponentsFromPackage(
       }
 
       // Register under the fully-qualified key (pluginName/exportName)
+      console.log(`[ComponentLoader] Registered component ${pluginName}/${exportName}`);
       componentRegistry.register(
         `${pluginName}/${exportName}`,
         component as QuartzComponentConstructor,
